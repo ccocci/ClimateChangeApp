@@ -1,0 +1,53 @@
+body{
+	padding: 10px;
+}
+
+.tableHeader {
+	background-color: #abbdd6;
+	color: #000000;
+	font-style: italic;
+}
+
+.table {
+	border: 1px solid silver;
+	padding: 2px;
+	margin-bottom: 6px;
+	text-align: right;
+}
+
+.tabs {
+        
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+p {
+	text-align: right;
+}
+
+
+
+/** Most GWT widgets already have a style name defined */
+.gwt-DialogBox {
+  width: 400px;
+}
+
+.dialogVPanel {
+  margin: 5px;
+}
+
+.serverResponseLabelError {
+  color: red;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
