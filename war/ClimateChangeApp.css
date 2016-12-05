@@ -19,6 +19,12 @@ body{
         
 }
 
+.box{
+	width:150px
+	height: 40px
+	font-size:2em
+}
+
 h1 {
   font-size: 2em;
   font-weight: bold;

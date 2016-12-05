@@ -128,6 +128,7 @@ public class TablePanel extends VerticalPanel{
 			endMonth.addItem(MONTHS[i]);
 		}
 		
+		
 		// Assemble Add filter panel.
 		addPanel.add(newSuggestBoxCountry);
 	    addPanel.add(newSuggestBoxCity);

@@ -17,7 +17,7 @@ public class FilterTable {
 		filterFlexTable.setText(0, 2, "Start Date");
 		filterFlexTable.setText(0, 3, "End Date");
 		filterFlexTable.setText(0, 4, "Remove");
-		filterFlexTable.setText(0, 5, "Go");
+		
 		
 		// Add styles to elements in the filter table.
 		filterFlexTable.setCellPadding(6);
@@ -25,7 +25,7 @@ public class FilterTable {
 		// Add styles to elements in the filter list table.
 		filterFlexTable.getRowFormatter().addStyleName(0, "tableHeader");
 		filterFlexTable.addStyleName("table");
-		for (int i=0; i<7; i++) {
+		for (int i=0; i<5; i++) {
 			filterFlexTable.getCellFormatter().addStyleName(0, i, "tableNumericColumn");
 		 }
 		 }
