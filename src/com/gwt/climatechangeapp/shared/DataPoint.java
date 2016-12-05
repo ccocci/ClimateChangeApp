@@ -63,6 +63,9 @@ public DataPoint(double temperature,double uncertainty,Date date, String city, S
 	public Date getDate() {
 		return date;
 	}
+	public int getYear(){
+		return date.getYear();
+	}
 	public void setDate(Date date) {
 		this.date = date;
 	}

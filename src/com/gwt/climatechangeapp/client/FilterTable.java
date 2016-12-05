@@ -61,14 +61,13 @@ public class FilterTable {
 	    	  filterFlexTable.setText(row, 3, "all");
 	      }
 	      filterFlexTable.setWidget(row, 4, currentFilterRow.getRemoveButton());	     
-	      filterFlexTable.setWidget(row, 5, currentFilterRow.getGetDataButton());
+	     
 
 	      filterFlexTable.getCellFormatter().addStyleName(row, 0, "filterTableColumn");
 	      filterFlexTable.getCellFormatter().addStyleName(row, 1, "filterTableColumn");
 	      filterFlexTable.getCellFormatter().addStyleName(row, 2, "filterTableColumn");
 	      filterFlexTable.getCellFormatter().addStyleName(row, 3, "filterTableColumn");
 	      currentFilterRow.getRemoveButton().addStyleDependentName("remove");
-		  currentFilterRow.getGetDataButton().addStyleDependentName("launch search");	 
 	}
 	
 	public void removeFilterFromTable(String city){

@@ -12,6 +12,7 @@ import com.gwt.climatechangeapp.shared.DataPoint;
 public interface DataService extends RemoteService{
 	ArrayList<DataPoint> temperatureMeasurements(String city, Date sdate, Date edate);
 	ArrayList<DataPoint> temperatureMeasurements(String city);
+	ArrayList<DataPoint> temperatureMeasurementsYears(int syear, int eyear);
 	ArrayList<DataPoint> temperatureMeasurementsCountry(String country, Date sdate, Date edate);
 	ArrayList<DataPoint> temperatureMeasurementsCountry(String country);
 	ArrayList<DataPoint> temperatureMeasurementsCityCountry(String country, String city);

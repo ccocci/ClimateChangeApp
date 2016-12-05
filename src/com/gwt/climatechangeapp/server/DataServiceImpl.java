@@ -72,6 +72,24 @@ public class DataServiceImpl extends RemoteServiceServlet implements DataService
 	}
 	
 	/**
+	 * Filters data with respect to year
+	 * @pre 	filteredData != null && city != null && data != null
+	 * @param 	city is the value for which the filter should be applied
+	 * @post 	filteredData contains (in addition to the previous filtered data) the asked data (all measurements of one city)
+	 * 			if the measurements aren't already in the ArrayList
+	 * @return 	ArrayList of temperature measurements with all the previous data plus the asked data (without doubled elements)
+	 */
+	public ArrayList<DataPoint> temperatureMeasurementsYears(int syear,int eyear) {
+		for(DataPoint Measurement:this.data){
+			if(	Measurement.getYear()>=syear && Measurement.getYear()<=eyear &&
+				!filteredData.contains(Measurement)){
+					this.filteredData.add(Measurement);
+			}
+		}
+		return this.filteredData;
+	}
+	
+	/**
 	 * Filters data with respect to city
 	 * @pre 	filteredData != null && city != null && data != null
 	 * @param 	city is the value for which the filter should be applied

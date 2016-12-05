@@ -170,7 +170,7 @@ public class TablePanel extends VerticalPanel{
 	   	});
 	       
 	    
-	    // Listen for mouse events on the Add button.
+	   // Listen for mouse events on the Add button.
 	    addFilterButton.addClickHandler(new ClickHandler() {
 	    	public void onClick(ClickEvent event) {
 	    		addFilter();
@@ -306,12 +306,9 @@ public class TablePanel extends VerticalPanel{
 			}
 		});
 	      
-	    // Add a button to get data for this filter setup
-	    filterTable.getCurrentRow(city).getGetDataButton().addClickHandler(new ClickHandler() {
-	    	public void onClick(ClickEvent event) {
+	  
 	    		addData(city, sdate, edate);
-	    	}
-	    });	        
+	    		        
 	}
 	
 	
@@ -346,6 +343,9 @@ public class TablePanel extends VerticalPanel{
 			}
 			if(country != "" && city != ""){
 				dataSvc.temperatureMeasurementsCityCountry(country, city, sdate, edate, callback);
+			}
+			if(country == "" && city == ""){
+				dataSvc.temperatureMeasurementsYears(sdate.getYear(), edate.getYear(), callback);
 			}
 		}
 		if(sdate == null && edate == null){
@@ -426,7 +426,7 @@ public class TablePanel extends VerticalPanel{
 	public void addData(String city, Date sdate, Date edate){
 		FilterRow currentRow = filterTable.getCurrentRow(city);
 		refreshMeasurementTable(currentRow.getCountry(),currentRow.getCity(),currentRow.getStartDate(),currentRow.getEndDate());
-		measurementTable.clearMeasurementTable();
+		//measurementTable.clearMeasurementTable();
 	}
 	
 	public void removeData(String city){

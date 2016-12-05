@@ -10,7 +10,7 @@ public class FilterRow {
 	private Date sdate;
 	private Date edate;
     private Button removeFilterButton;
-	private Button getDataButton;
+	//private Button getDataButton;
 	
 	public FilterRow(String country, String city, Date sdate, Date edate){
 		this.country = country;
@@ -18,13 +18,13 @@ public class FilterRow {
 		this.sdate = sdate;
 		this.edate = edate;
 		this.removeFilterButton = new Button("x");
-		this.getDataButton = new Button("Go");
+		//this.getDataButton = new Button("Go");
 	}
 	
 	public FilterRow(String city){
 		this.city = city;
 		this.removeFilterButton = new Button("x");
-		this.getDataButton = new Button("Go");
+		//this.getDataButton = new Button("Go");
 	}
 	
 	public String getCountry(){
@@ -47,7 +47,4 @@ public class FilterRow {
 		return this.removeFilterButton;
 	}
 	
-	public Button getGetDataButton(){
-		return this.getDataButton;
-	}
 }
