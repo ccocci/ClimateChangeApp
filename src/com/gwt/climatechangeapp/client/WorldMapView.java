@@ -50,7 +50,7 @@ public class WorldMapView extends Composite{
 	private String city="city";
 	private String country="country";
 	private DataServiceAsync dataService = GWT.create(DataService.class);
-	private ArrayList<DataPoint> cityAtYearData;
+	private ArrayList<DataPoint> cityAtYearData= new ArrayList<DataPoint>();
 	private final Date INITIAL_DATE = DateTimeFormat.getFormat("dd/MM/yyyy").parse("01/01/"+INITIAL_YEAR.toString());
 
 	// Create the MapView
@@ -89,10 +89,26 @@ public class WorldMapView extends Composite{
 	 * 
 	 */
 		
-	private void draw() {
+	private void draw(ArrayList<DataPoint> cityAtYearData) {
 		// Prepare the data 
 		// TODO: Function, which gets the right data form the list.
-		DataTable dataTable = prepareData();
+		DataTable dataTable = DataTable.create();
+		dataTable.addColumn(ColumnType.STRING, "City");
+		dataTable.addColumn(ColumnType.NUMBER, "Temperature");
+		dataTable.addColumn(ColumnType.NUMBER,"Uncertainty");
+		
+	/*	dataTable.addRows(1);
+		dataTable.setValue(0, 0, "Buenos Aires");
+		dataTable.setValue(0, 0,13);
+		dataTable.setValue(0, 0,2);
+		*/
+
+		dataTable.addRows(cityAtYearData.size());
+		for (int i = 0; i < cityAtYearData.size(); i++) {
+			dataTable.setValue(i, 0, cityAtYearData.get(i).getCity());
+			dataTable.setValue(i, 1, cityAtYearData.get(i).getTemperature());
+			dataTable.setValue(i, 2, cityAtYearData.get(i).getUncertainty());
+		}
 
 			
 		// set geochart options
@@ -108,7 +124,7 @@ public class WorldMapView extends Composite{
 		
 	}
 
-	private DataTable prepareData() {
+/**	private DataTable prepareData() {
 		DataTable dataTable = DataTable.create();
 		dataTable.addColumn(ColumnType.STRING, "City");
 		dataTable.addColumn(ColumnType.NUMBER, "Temperature");
@@ -120,15 +136,15 @@ public class WorldMapView extends Composite{
 		dataTable.setValue(0, 0,2);
 		*/
 
-		dataTable.addRows(cityAtYearData.size());
+	/**	dataTable.addRows(cityAtYearData.size());
 		for (int i = 0; i < cityAtYearData.size(); i++) {
-			dataTable.setValue(i, 0, cityAtYearData.get(i).getCountry());
+			dataTable.setValue(i, 0, cityAtYearData.get(i).getCity());
 			dataTable.setValue(i, 1, cityAtYearData.get(i).getTemperature());
 			dataTable.setValue(i, 2, cityAtYearData.get(i).getUncertainty());
 		}
 		
 		return dataTable;
-	}
+	}*/
 	/**
 	 * 
 	 * Sets the colors for markers.
@@ -153,8 +169,7 @@ public class WorldMapView extends Composite{
 			@Override
 			public void onSuccess(ArrayList<DataPoint> result) {
 				if(result.isEmpty()) Window.alert("No data recieved from server...");
-				cityAtYearData = result;
-				draw();
+				draw(result);
 			}
 		};
 
@@ -167,7 +182,7 @@ public class WorldMapView extends Composite{
 	}-*/;
 	
 	//returns ArrayList of average temperatures of each and all cities
-	public ArrayList<DataPoint> generateCityAverageList(ArrayList<DataPoint> temperaturesAtMonths) {
+/*	public ArrayList<DataPoint> generateCityAverageList(ArrayList<DataPoint> temperaturesAtMonths) {
 		// TODO Auto-generated method stub
 		ArrayList<DataPoint> averageTemperatures = new ArrayList<DataPoint>();
 		double average;
@@ -195,5 +210,7 @@ public class WorldMapView extends Composite{
 		
 		return averageTemperatures;
 		
-	}
+	}*/
+	
+	
 }

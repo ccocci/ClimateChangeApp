@@ -253,13 +253,13 @@ public class DataServiceImpl extends RemoteServiceServlet implements DataService
 	
 	
 	public ArrayList<DataPoint> temperatureMeasurementsOfAllCitiesAtYear(int year){
-		sliderData.clear();
+		ArrayList<DataPoint> mapData = new ArrayList<DataPoint>();
 		for(DataPoint Measurement:this.data){
 			if(Measurement.getYear()==year){
-				this.sliderData.add(Measurement);
+				mapData.add(Measurement);
 			}
 		}
-		return this.sliderData;
+		return mapData;
 	}
 	
 	/**Removes all measurements of one specific city

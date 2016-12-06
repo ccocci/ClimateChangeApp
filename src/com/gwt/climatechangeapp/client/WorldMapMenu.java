@@ -42,24 +42,15 @@ public class WorldMapMenu extends VerticalPanel {
 	private VerticalPanel uncertaintySliderPanel= new VerticalPanel();
 	
 	
-	// create listboxes and their labels
-	private ListBox chooseCountry= new ListBox();
-	private Label countryLabel= new Label("Country");
-	private ListBox chooseCity= new ListBox();
-	private Label cityLabel= new Label("City");
+	
 	
 	
 	// create sliders and their labels
-	//private SliderBar yearSlider= new SliderBar(5,10);
+	
 	
 
 	 
-	private Label yearLabel= new Label("Year");
-
-	private Label tempLabel= new Label("Temperature");
 	
-	private Label tempUncertaintyLabel= new Label("Uncertainty");
-	private ToggleButton hideUncertainty = new ToggleButton("Hide uncertain Data");
 	
 	
 	public WorldMapMenu(){
@@ -125,44 +116,22 @@ public class WorldMapMenu extends VerticalPanel {
 	private void fillPanels(){
 		//styleSlider();
 		//Add everything in slidePanel
-		yearPanel.add(yearLabel);
 		
-		tempPanel.add(tempLabel);
-		uncertaintySliderPanel.add(tempUncertaintyLabel);
 		
 		uncertaintyPanel.add(uncertaintySliderPanel);
-		uncertaintyPanel.add(hideUncertainty);
+		
 		sliderPanel.add(yearPanel);
 		sliderPanel.add(tempPanel);
 		sliderPanel.add(uncertaintyPanel);
 		
-		styleListBox();
 		//Add everything in listPanel
-		countryPanel.add(countryLabel);
-		countryPanel.add(chooseCountry);
-		cityPanel.add(cityLabel);
-		cityPanel.add(chooseCity);
 		listPanel.add(countryPanel);
 		listPanel.add(cityPanel);
 		
 	
 	}
 	
-		private void styleListBox(){
-		
-		chooseCity.setVisibleItemCount(1);
-		chooseCity.addItem("Abidjan");
-		chooseCity.addItem("Addis Abeba");
-		chooseCity.addItem("Ahmadabad");
-		chooseCity.addItem("Aleppo");
-		
-		
-		chooseCountry.setVisibleItemCount(1);
-		chooseCountry.addItem("Côte d'Ivoire");
-		chooseCountry.addItem("Ethiopia");
-		chooseCountry.addItem("India");
-		chooseCountry.addItem("Syria");
-	}
+	
 	
 /*	private void styleSlider() {
 		// TODO anpassung der Mindest- und Maximaltemperatur.

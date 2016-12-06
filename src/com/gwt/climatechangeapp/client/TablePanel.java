@@ -128,6 +128,12 @@ public class TablePanel extends VerticalPanel{
 			endMonth.addItem(MONTHS[i]);
 		}
 		
+		// set style
+		newSuggestBoxCountry.setStyleName("box");
+		newSuggestBoxCity.setStyleName("box");
+		integerBoxEndYear.setStyleName("box");
+		integerBoxStartYear.setStyleName("box");
+		addFilterButton.setStyleName("addButton");
 		
 		// Assemble Add filter panel.
 		addPanel.add(newSuggestBoxCountry);
